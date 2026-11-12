@@ -1,29 +1,29 @@
 /* Shared visual language for itinerary categories and image fallbacks. */
 
 export const categoryTheme = {
-  'Water Sports & Rides': {
-    short: 'Rides & Adventure',
+  'વોટર સ્પોર્ટ્સ અને રાઇડ્સ': {
+    short: 'રાઇડ્સ અને રોમાંચ',
     badge: 'bg-coral-500/95 text-white',
     soft: 'bg-coral-50 text-coral-700 ring-1 ring-coral-200/70',
     dot: 'bg-coral-400',
     bar: 'from-coral-400 to-gold-300',
   },
-  Temples: {
-    short: 'Temples',
+  'મંદિરો': {
+    short: 'મંદિરો',
     badge: 'bg-gold-500/95 text-ocean-950',
     soft: 'bg-gold-100 text-gold-500 ring-1 ring-gold-200/80',
     dot: 'bg-gold-400',
     bar: 'from-gold-300 to-sand-400',
   },
-  'Islands & Beaches': {
-    short: 'Islands & Beaches',
+  'ટાપુ અને બીચ': {
+    short: 'ટાપુ અને બીચ',
     badge: 'bg-ocean-500/95 text-white',
     soft: 'bg-ocean-50 text-ocean-700 ring-1 ring-ocean-200/70',
     dot: 'bg-ocean-400',
     bar: 'from-ocean-300 to-ocean-600',
   },
-  'Nature & Culture': {
-    short: 'Nature & Culture',
+  'પ્રકૃતિ અને સંસ્કૃતિ': {
+    short: 'પ્રકૃતિ અને સંસ્કૃતિ',
     badge: 'bg-emerald-700/95 text-white',
     soft: 'bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200/70',
     dot: 'bg-emerald-500',
@@ -32,7 +32,7 @@ export const categoryTheme = {
 }
 
 export const defaultCategoryTheme = {
-  short: 'Bali',
+  short: 'બાલી',
   badge: 'bg-ocean-700/95 text-white',
   soft: 'bg-sand-100 text-ocean-800 ring-1 ring-sand-300',
   dot: 'bg-ocean-400',
@@ -67,8 +67,8 @@ const fallbackSvg = `
     <path d="M0 0 C 86 -30 166 -20 228 24 C 150 -4 78 6 0 0Z"/>
     <path d="M-2 0 C -84 20 -140 70 -168 142 C -128 68 -70 28 -2 0Z"/>
   </g>
-  <text x="600" y="1020" font-family="Georgia, serif" font-size="58" fill="#FCF8F1" text-anchor="middle" letter-spacing="4">BALI</text>
-  <text x="600" y="1070" font-family="Arial, sans-serif" font-size="24" fill="#FCF8F1" fill-opacity="0.65" text-anchor="middle" letter-spacing="7">PHOTO COMING SOON</text>
+  <text x="600" y="1020" font-family="Georgia, serif" font-size="58" fill="#FCF8F1" text-anchor="middle" letter-spacing="1">બાલી</text>
+  <text x="600" y="1070" font-family="system-ui, sans-serif" font-size="24" fill="#FCF8F1" fill-opacity="0.65" text-anchor="middle" letter-spacing="1">ફોટો ટૂંક સમયમાં</text>
 </svg>`
 
 export const FALLBACK_IMAGE = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(

@@ -23,11 +23,11 @@ export default function PlaceCard({ place, index = 0, onOpen }) {
 
           {/* Badges */}
           <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-3.5">
-            <span className="rounded-full border border-white/25 bg-ocean-950/40 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-md">
+            <span className="rounded-full border border-white/25 bg-ocean-950/40 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur-md">
               {place.day}
             </span>
             <span
-              className={`max-w-[9.5rem] truncate rounded-full px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.12em] shadow-sm backdrop-blur-sm ${category.badge}`}
+              className={`max-w-[10.5rem] truncate rounded-full px-2.5 py-1 text-[10px] font-bold shadow-sm backdrop-blur-sm ${category.badge}`}
             >
               {category.short}
             </span>
@@ -48,7 +48,7 @@ export default function PlaceCard({ place, index = 0, onOpen }) {
         </div>
 
       <div className="p-4 sm:p-5">
-        <h3 className="font-display text-[1.4rem] font-normal leading-[1.15] tracking-[-0.01em] text-ocean-950 transition-colors duration-300 group-hover:text-ocean-600">
+        <h3 className="font-display text-[1.4rem] font-normal leading-[1.3] text-ocean-950 transition-colors duration-300 group-hover:text-ocean-600">
           {place.title}
         </h3>
 
@@ -57,7 +57,7 @@ export default function PlaceCard({ place, index = 0, onOpen }) {
           <span className="truncate">{place.location}</span>
         </p>
 
-        <p className="mt-2.5 line-clamp-2 text-[12.5px] leading-relaxed text-ocean-900/60">
+        <p className="mt-2.5 line-clamp-3 text-[12.5px] leading-relaxed text-ocean-900/60">
           {place.description}
         </p>
 
@@ -65,7 +65,7 @@ export default function PlaceCard({ place, index = 0, onOpen }) {
           {place.highlights.slice(0, 3).map((highlight) => (
             <span
               key={highlight}
-              className="rounded-full bg-sand-100/80 px-2.5 py-1 text-[9.5px] font-semibold text-ocean-800/70 ring-1 ring-ocean-950/[0.03]"
+              className="rounded-full bg-sand-100/80 px-2.5 py-1 text-[10px] font-semibold text-ocean-800/70 ring-1 ring-ocean-950/[0.03]"
             >
               {highlight}
             </span>
@@ -78,7 +78,7 @@ export default function PlaceCard({ place, index = 0, onOpen }) {
         type="button"
         onClick={() => onOpen(place.id)}
         className="absolute inset-0 z-20 rounded-[1.5rem] focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-inset"
-        aria-label={`View photo and details for ${place.title}`}
+        aria-label={`${place.title} નો ફોટો અને વિગતો જુઓ`}
       />
     </article>
   )

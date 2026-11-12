@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import { hotels, places, tripInfo } from '../data/baliData'
 import { handleImageError } from '../lib/theme'
+import { toGujaratiNumber } from '../lib/numbers'
 
 export default function Hero() {
   return (
@@ -21,7 +22,7 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <img
           src={tripInfo.heroImage}
-          alt="Bali coastline at golden hour"
+          alt="સોનેરી કલાકે બાલીનો કિનારો"
           onError={handleImageError}
           fetchPriority="high"
           className="h-full w-full scale-105 object-cover opacity-60 animate-slow-pan"
@@ -40,28 +41,29 @@ export default function Hero() {
               style={{ animationDelay: '40ms' }}
             >
               <Sparkles className="h-3.5 w-3.5" />
-              <span>Bali, Indonesia</span>
+              <span>બાલી, ઇન્ડોનેશિયા</span>
               <span className="h-1 w-1 rounded-full bg-gold-200/60" />
-              <span className="text-sand-200/80">6 nights · 7 days</span>
+              <span className="text-sand-200/80">૬ રાત · ૭ દિવસ</span>
             </div>
 
             <h1
-              className="mt-7 animate-fade-up font-display text-[clamp(3.65rem,11vw,7.7rem)] font-light leading-[0.86] tracking-[-0.045em] text-shadow-soft"
+              className="mt-6 animate-fade-up font-display font-light text-shadow-soft"
               style={{ animationDelay: '120ms' }}
             >
-              <span className="block">Bali</span>
-              <span className="mt-3 block">
-                <span className="italic text-sand-200">6N/7D</span>{' '}
-                <span className="text-sand-50">Escape</span>
+              <span className="block text-[clamp(4rem,13vw,8.5rem)] leading-[1.04]">
+                બાલી
+              </span>
+              <span className="mt-2 block text-[clamp(1.4rem,4.6vw,2.6rem)] font-normal leading-[1.3] text-sand-200">
+                ૬ રાત / ૭ દિવસની સફર
               </span>
             </h1>
 
             <p
-              className="mt-7 max-w-xl animate-fade-up text-base leading-relaxed text-sand-100/80 sm:text-[17px]"
+              className="mt-6 max-w-xl animate-fade-up text-base leading-relaxed text-sand-100/80 sm:text-[17px]"
               style={{ animationDelay: '220ms' }}
             >
-              {tripInfo.tagline} Water sports, island cliffs, sunset temples and
-              slow Ubud mornings — all mapped into one unhurried week.
+              {tripInfo.tagline} એક જ અઠવાડિયામાં વોટર સ્પોર્ટ્સ, ટાપુની ભેખડો,
+              સૂર્યાસ્તનાં મંદિરો અને ઉબુદની ધીમી સવારો.
             </p>
 
             <div
@@ -75,7 +77,7 @@ export default function Hero() {
               <span className="hidden h-4 w-px bg-white/20 sm:block" />
               <span className="inline-flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-gold-300" strokeWidth={1.8} />
-                Legian → Nusa Penida → Ubud
+                લેજિયન → નુસા પેનિડા → ઉબુદ
               </span>
             </div>
 
@@ -84,12 +86,12 @@ export default function Hero() {
               style={{ animationDelay: '380ms' }}
             >
               <a href="#itinerary" className="btn-primary group">
-                Explore the itinerary
+                યાત્રાપથ જુઓ
                 <ArrowDownRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
               </a>
               <a href="#stays" className="btn-ghost-light group">
                 <Hotel className="h-4 w-4 text-gold-200" strokeWidth={1.8} />
-                The two stays
+                બે ઉતારા
               </a>
             </div>
 
@@ -103,7 +105,7 @@ export default function Hero() {
                   <div className="font-display text-2xl font-light leading-none text-sand-50 sm:text-[1.8rem]">
                     {stat.value}
                   </div>
-                  <div className="mt-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-gold-200 sm:text-[10px]">
+                  <div className="mt-2 text-[10px] font-bold text-gold-200 sm:text-[11px]">
                     {stat.label}
                   </div>
                   <div className="mt-1 hidden text-[10px] text-sand-200/55 sm:block">
@@ -125,7 +127,7 @@ export default function Hero() {
               <div className="relative h-52 overflow-hidden">
                 <img
                   src={hotels[1].imageUrl}
-                  alt="Ubud jungle stay"
+                  alt="ઉબુદનો જંગલ ઉતારો"
                   onError={handleImageError}
                   loading="lazy"
                   className="h-full w-full object-cover transition duration-700 hover:scale-105"
@@ -134,14 +136,14 @@ export default function Hero() {
                 <div className="absolute inset-x-0 bottom-0 p-5">
                   <p className="eyebrow text-gold-200">
                     <MoonStar className="h-3.5 w-3.5" />
-                    Where you’ll wake up
+                    જ્યાં તમે સવારે ઉઠશો
                   </p>
-                  <p className="mt-1.5 font-display text-2xl font-light text-sand-50">
-                    Beach first. Jungle after.
+                  <p className="mt-1.5 font-display text-2xl font-normal text-sand-50">
+                    પહેલાં બીચ. પછી જંગલ.
                   </p>
                 </div>
-                <span className="absolute right-4 top-4 rounded-full border border-white/25 bg-ocean-950/40 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-sand-100 backdrop-blur-md">
-                  2 stays · 6 nights
+                <span className="absolute right-4 top-4 rounded-full border border-white/25 bg-ocean-950/40 px-3 py-1 text-[10px] font-bold text-sand-100 backdrop-blur-md">
+                  ૨ ઉતારા · ૬ રાત
                 </span>
               </div>
 
@@ -185,8 +187,8 @@ export default function Hero() {
                 <CalendarDays className="h-4 w-4" />
               </span>
               <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-gold-200/90">
-                  On the calendar
+                <p className="text-[10px] font-bold text-gold-200/90">
+                  કેલેન્ડર પર
                 </p>
                 <p className="text-sm font-semibold text-sand-50">{tripInfo.dates}</p>
               </div>
@@ -198,10 +200,10 @@ export default function Hero() {
       {/* Route ticker */}
       <div className="relative border-t border-white/10 bg-ocean-950/40 backdrop-blur-md">
         <div className="container-bali flex items-center gap-4 py-4">
-          <span className="hidden shrink-0 text-[9px] font-bold uppercase tracking-[0.28em] text-gold-200 sm:block">
-            The loop
+          <span className="hidden shrink-0 text-[10px] font-bold text-gold-200 sm:block">
+            સફરનો રસ્તો
           </span>
-          <div className="no-scrollbar flex flex-1 items-center gap-2.5 overflow-x-auto text-[10px] font-semibold uppercase tracking-[0.18em] text-sand-200/70 sm:gap-3">
+          <div className="no-scrollbar flex flex-1 items-center gap-2.5 overflow-x-auto text-[11px] font-semibold text-sand-200/70 sm:gap-3">
             {tripInfo.route.map((stop, index) => (
               <span key={stop} className="flex shrink-0 items-center gap-2.5 sm:gap-3">
                 <span className="whitespace-nowrap transition hover:text-sand-50">{stop}</span>
@@ -213,7 +215,7 @@ export default function Hero() {
           </div>
           <span className="hidden shrink-0 items-center gap-1.5 text-[10px] font-semibold text-sand-200/55 sm:flex">
             <Sparkles className="h-3 w-3 text-gold-300" />
-            {places.length} saved spots
+            {toGujaratiNumber(places.length)} સાચવેલાં સ્થળો
           </span>
         </div>
       </div>

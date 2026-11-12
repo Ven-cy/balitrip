@@ -13,6 +13,7 @@ import {
   dayFilters,
   places as allPlaces,
 } from '../data/baliData'
+import { toGujaratiNumber } from '../lib/numbers'
 
 const categoryIcons = {
   all: LayoutGrid,
@@ -48,7 +49,7 @@ export default function FilterBar({
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="relative w-full lg:max-w-md">
             <label htmlFor="spot-search" className="sr-only">
-              Search spots and rides
+              સ્થળ અને રાઇડ શોધો
             </label>
             <Search
               className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-ocean-400"
@@ -60,7 +61,7 @@ export default function FilterBar({
               type="search"
               value={query}
               onChange={(event) => onQueryChange(event.target.value)}
-              placeholder="Search a spot, ride or beach…"
+              placeholder="સ્થળ, રાઇડ કે બીચ શોધો…"
               className="h-12 w-full rounded-full border border-ocean-950/[0.08] bg-white/80 pl-11 pr-11 text-sm text-ocean-950 placeholder:text-ocean-900/35 transition focus:border-ocean-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-ocean-400/10 [&::-webkit-search-cancel-button]:hidden"
             />
             {query && (
@@ -68,7 +69,7 @@ export default function FilterBar({
                 type="button"
                 onClick={() => onQueryChange('')}
                 className="absolute right-3 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-full text-ocean-500 transition hover:bg-ocean-900/[0.06] hover:text-ocean-900"
-                aria-label="Clear search"
+                aria-label="શોધ સાફ કરો"
               >
                 <X className="h-3.5 w-3.5" />
               </button>
@@ -77,11 +78,11 @@ export default function FilterBar({
 
           <div className="flex items-center justify-between gap-3 lg:justify-end">
             <p
-              className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ocean-900/50"
+              className="text-[11px] font-semibold text-ocean-900/50"
               aria-live="polite"
             >
-              <span className="text-ocean-900">{resultCount}</span> of {allPlaces.length}{' '}
-              spots
+              <span className="text-ocean-900">{toGujaratiNumber(resultCount)}</span> / {toGujaratiNumber(allPlaces.length)}{' '}
+              સ્થળો
             </p>
             {hasFilters && (
               <button
@@ -90,7 +91,7 @@ export default function FilterBar({
                 className="inline-flex items-center gap-1.5 rounded-full border border-ocean-950/[0.08] bg-white/70 px-3 py-1.5 text-[11px] font-bold text-ocean-700 transition hover:border-coral-300 hover:bg-coral-50 hover:text-coral-600"
               >
                 <X className="h-3 w-3" />
-                Reset
+                રીસેટ
               </button>
             )}
           </div>
@@ -100,13 +101,13 @@ export default function FilterBar({
 
         {/* Day tabs */}
         <div className="mt-4 flex items-start gap-2 sm:gap-3">
-          <span className="mt-2.5 hidden w-14 shrink-0 text-[9px] font-bold uppercase tracking-[0.2em] text-ocean-900/35 sm:block">
-            Day
+          <span className="mt-2.5 hidden w-14 shrink-0 text-[10px] font-bold text-ocean-900/35 sm:block">
+            દિવસ
           </span>
           <div
             className="no-scrollbar -mx-1 flex flex-1 gap-1.5 overflow-x-auto px-1 pb-1"
             role="group"
-            aria-label="Filter by day"
+            aria-label="દિવસ પ્રમાણે ફિલ્ટર"
           >
             {dayFilters.map((filter) => {
               const active = activeDay === filter.id
@@ -128,7 +129,7 @@ export default function FilterBar({
                       active ? 'text-gold-300' : 'text-ocean-900/35'
                     }`}
                   >
-                    {dayCounts[filter.id]}
+                    {toGujaratiNumber(dayCounts[filter.id])}
                   </span>
                 </button>
               )
@@ -138,13 +139,13 @@ export default function FilterBar({
 
         {/* Category chips */}
         <div className="mt-2 flex items-start gap-2 sm:gap-3">
-          <span className="mt-2.5 hidden w-14 shrink-0 text-[9px] font-bold uppercase tracking-[0.2em] text-ocean-900/35 sm:block">
-            Vibe
+          <span className="mt-2.5 hidden w-14 shrink-0 text-[10px] font-bold text-ocean-900/35 sm:block">
+            મૂડ
           </span>
           <div
             className="no-scrollbar -mx-1 flex flex-1 gap-1.5 overflow-x-auto px-1 pb-1"
             role="group"
-            aria-label="Filter by category"
+            aria-label="શ્રેણી પ્રમાણે ફિલ્ટર"
           >
             {categoryFilters.map((filter) => {
               const active = activeCategory === filter.id

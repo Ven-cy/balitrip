@@ -50,8 +50,19 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Fraunces', 'Georgia', 'serif'],
-        sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: [
+          '"Noto Serif Gujarati"',
+          'Fraunces',
+          'Georgia',
+          'serif',
+        ],
+        sans: [
+          '"Mukta Vaani"',
+          'Manrope',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+        ],
       },
       boxShadow: {
         soft: '0 18px 45px -25px rgba(7, 33, 36, 0.35)',

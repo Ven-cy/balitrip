@@ -12,6 +12,7 @@ import {
   X,
 } from 'lucide-react'
 import { getCategoryTheme, handleImageError } from '../lib/theme'
+import { toGujaratiPadded } from '../lib/numbers'
 
 export default function PhotoModal({ place, places, index, onClose, onPrev, onNext }) {
   const dialogRef = useRef(null)
@@ -122,17 +123,17 @@ export default function PhotoModal({ place, places, index, onClose, onPrev, onNe
 
           <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-4">
             <div className="flex flex-wrap items-center gap-1.5">
-              <span className="rounded-full border border-white/25 bg-ocean-950/35 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md">
+              <span className="rounded-full border border-white/25 bg-ocean-950/35 px-3 py-1.5 text-[10px] font-bold text-white backdrop-blur-md">
                 {place.day}
               </span>
               <span
-                className={`rounded-full px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.12em] backdrop-blur-sm ${category.badge}`}
+                className={`rounded-full px-3 py-1.5 text-[10px] font-bold backdrop-blur-sm ${category.badge}`}
               >
                 {category.short}
               </span>
             </div>
             <span className="rounded-full border border-white/20 bg-ocean-950/35 px-3 py-1.5 text-[10px] font-bold tabular-nums text-white/90 backdrop-blur-md">
-              {String(index + 1).padStart(2, '0')} / {String(places.length).padStart(2, '0')}
+              {toGujaratiPadded(index + 1)} / {toGujaratiPadded(places.length)}
             </span>
           </div>
 
@@ -142,7 +143,7 @@ export default function PhotoModal({ place, places, index, onClose, onPrev, onNe
               type="button"
               onClick={onPrev}
               className="grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-ocean-950/35 text-white backdrop-blur-md transition hover:scale-105 hover:bg-ocean-950/55 focus-visible:ring-white sm:h-11 sm:w-11"
-              aria-label="Previous photo"
+              aria-label="અગાઉનો ફોટો"
             >
               <ArrowLeft className="h-4 w-4" />
             </button>
@@ -150,7 +151,7 @@ export default function PhotoModal({ place, places, index, onClose, onPrev, onNe
               type="button"
               onClick={onNext}
               className="grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-ocean-950/35 text-white backdrop-blur-md transition hover:scale-105 hover:bg-ocean-950/55 focus-visible:ring-white sm:h-11 sm:w-11"
-              aria-label="Next photo"
+              aria-label="આગલો ફોટો"
             >
               <ArrowRight className="h-4 w-4" />
             </button>
@@ -172,8 +173,8 @@ export default function PhotoModal({ place, places, index, onClose, onPrev, onNe
         <div className="flex min-h-0 flex-1 flex-col bg-sand-50">
           <div className="flex items-start justify-between gap-4 border-b border-ocean-950/[0.06] px-5 py-4 sm:px-6">
             <div>
-              <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-ocean-500">
-                Stop {String(index + 1).padStart(2, '0')} · {place.day}
+              <p className="text-[10px] font-bold text-ocean-500">
+                સ્થળ {toGujaratiPadded(index + 1)} · {place.day}
               </p>
               <p className="mt-1 flex items-center gap-1.5 text-[11px] font-semibold text-ocean-900/50">
                 <CalendarDays className="h-3 w-3" />
@@ -185,7 +186,7 @@ export default function PhotoModal({ place, places, index, onClose, onPrev, onNe
               type="button"
               onClick={onClose}
               className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-ocean-950/10 bg-white text-ocean-700 transition hover:rotate-90 hover:border-ocean-950/20 hover:bg-sand-100 hover:text-ocean-950"
-              aria-label="Close photo viewer"
+              aria-label="ફોટો બંધ કરો"
             >
               <X className="h-4 w-4" />
             </button>
@@ -194,7 +195,7 @@ export default function PhotoModal({ place, places, index, onClose, onPrev, onNe
           <div className="no-scrollbar flex-1 overflow-y-auto px-5 py-5 sm:px-6 sm:py-6">
             <h2
               id="photo-modal-title"
-              className="font-display text-[2rem] font-light leading-[1.05] tracking-[-0.02em] text-ocean-950 sm:text-[2.4rem]"
+              className="font-display text-[2rem] font-normal leading-[1.2] text-ocean-950 sm:text-[2.4rem]"
             >
               {place.title}
             </h2>
@@ -209,8 +210,8 @@ export default function PhotoModal({ place, places, index, onClose, onPrev, onNe
             </p>
 
             <div className="mt-5">
-              <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-ocean-900/35">
-                Don’t miss
+              <p className="text-[10px] font-bold text-ocean-900/35">
+                ચૂકવું નહીં
               </p>
               <div className="mt-2.5 flex flex-wrap gap-1.5">
                 {place.highlights.map((highlight) => (
@@ -227,9 +228,9 @@ export default function PhotoModal({ place, places, index, onClose, onPrev, onNe
 
             {place.tip && (
               <div className="mt-5 rounded-2xl border border-gold-200 bg-gold-100/40 p-3.5">
-                <p className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.18em] text-gold-500">
+                <p className="flex items-center gap-1.5 text-[10px] font-bold text-gold-500">
                   <Lightbulb className="h-3.5 w-3.5" />
-                  Good to know
+                  જાણવા જેવું
                 </p>
                 <p className="mt-1.5 text-[12.5px] leading-relaxed text-ocean-900/70">
                   {place.tip}
@@ -242,8 +243,8 @@ export default function PhotoModal({ place, places, index, onClose, onPrev, onNe
                 <Hotel className="h-4 w-4" strokeWidth={1.8} />
               </span>
               <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-ocean-500">
-                  Tonight’s stay
+                <p className="text-[10px] font-bold text-ocean-500">
+                  આજનો ઉતારો
                 </p>
                 <p className="text-xs font-bold text-ocean-900">{place.stay}</p>
               </div>
@@ -257,20 +258,20 @@ export default function PhotoModal({ place, places, index, onClose, onPrev, onNe
               className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-ocean-950/10 bg-white px-4 py-2.5 text-[11px] font-bold text-ocean-800 transition hover:border-ocean-300 hover:bg-sand-100"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
-              Previous
+              અગાઉનું
             </button>
             <button
               type="button"
               onClick={onNext}
               className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-ocean-900 px-4 py-2.5 text-[11px] font-bold text-sand-50 transition hover:bg-ocean-800"
             >
-              Next photo
+              આગલો ફોટો
               <ArrowRight className="h-3.5 w-3.5" />
             </button>
           </div>
 
-          <p className="hidden border-t border-ocean-950/[0.04] px-5 py-2.5 text-center text-[9px] font-semibold uppercase tracking-[0.18em] text-ocean-900/30 lg:block">
-            Use ← → to browse · Esc to close
+          <p className="hidden border-t border-ocean-950/[0.04] px-5 py-2.5 text-center text-[10px] font-semibold text-ocean-900/30 lg:block">
+            ← → થી બ્રાઉઝ કરો · Esc થી બંધ કરો
           </p>
         </div>
       </div>

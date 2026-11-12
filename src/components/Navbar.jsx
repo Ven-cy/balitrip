@@ -3,9 +3,9 @@ import { ArrowUpRight, Menu, Palmtree, X } from 'lucide-react'
 import { tripInfo } from '../data/baliData'
 
 const links = [
-  { label: 'Itinerary', href: '#itinerary' },
-  { label: 'Stays', href: '#stays' },
-  { label: 'Photos', href: '#photos' },
+  { label: 'યાત્રાપથ', href: '#itinerary' },
+  { label: 'ઉતારા', href: '#stays' },
+  { label: 'ફોટા', href: '#photos' },
 ]
 
 export default function Navbar() {
@@ -43,7 +43,7 @@ export default function Navbar() {
           <a
             href="#top"
             className="group flex items-center gap-3 rounded-2xl"
-            aria-label={`${tripInfo.title} — back to top`}
+            aria-label={`${tripInfo.title} — ઉપર જાઓ`}
           >
             <span
               className={`grid h-10 w-10 place-items-center rounded-2xl transition duration-500 group-hover:rotate-[-6deg] ${
@@ -55,21 +55,21 @@ export default function Navbar() {
               <Palmtree className="h-5 w-5" strokeWidth={1.7} />
             </span>
             <span className="leading-none">
-              <span className="block font-display text-[1.35rem] font-normal tracking-[-0.02em]">
-                Bali ’26
+              <span className="block font-display text-[1.35rem] font-normal">
+                બાલી ’૨૬
               </span>
               <span
-                className={`mt-1 block text-[9px] font-bold uppercase tracking-[0.26em] ${
+                className={`mt-1 block text-[10px] font-bold ${
                   solid ? 'text-ocean-600' : 'text-sand-200/80'
                 }`}
               >
-                6N / 7D escape
+                ૬ રાત / ૭ દિવસની સફર
               </span>
             </span>
           </a>
 
           {/* Desktop links */}
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
+          <nav className="hidden items-center gap-1 md:flex" aria-label="મુખ્ય નેવિગેશન">
             {links.map((link) => (
               <a
                 key={link.label}
@@ -94,7 +94,7 @@ export default function Navbar() {
                   : 'border border-white/25 bg-white/10 text-sand-50 backdrop-blur-md hover:-translate-y-0.5 hover:bg-white/20'
               }`}
             >
-              Explore photos
+              ફોટા જુઓ
               <ArrowUpRight className="h-4 w-4" strokeWidth={2.2} />
             </a>
 
@@ -108,7 +108,7 @@ export default function Navbar() {
               }`}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={menuOpen ? 'મેનુ બંધ કરો' : 'મેનુ ખોલો'}
             >
               {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -123,7 +123,7 @@ export default function Navbar() {
           menuOpen ? 'max-h-96 opacity-100' : 'pointer-events-none max-h-0 opacity-0'
         }`}
       >
-        <nav className="container-bali flex flex-col gap-1 py-4" aria-label="Mobile navigation">
+        <nav className="container-bali flex flex-col gap-1 py-4" aria-label="મોબાઇલ નેવિગેશન">
           {links.map((link) => (
             <a
               key={link.label}
@@ -137,7 +137,7 @@ export default function Navbar() {
           ))}
           <div className="mt-2 flex items-center justify-between rounded-2xl bg-sand-100 px-4 py-3 text-xs text-ocean-700">
             <span className="font-semibold">{tripInfo.dates}</span>
-            <span>Bali, Indonesia</span>
+            <span>બાલી, ઇન્ડોનેશિયા</span>
           </div>
         </nav>
       </div>

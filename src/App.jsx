@@ -7,6 +7,7 @@ import FilterBar from './components/FilterBar'
 import PlaceCard from './components/PlaceCard'
 import PhotoModal from './components/PhotoModal'
 import Footer from './components/Footer'
+import { toGujaratiNumber, toGujaratiPadded } from './lib/numbers'
 import {
   places,
   categoryFilters,
@@ -107,15 +108,15 @@ export default function App() {
               <div className="max-w-2xl">
                 <p className="eyebrow text-ocean-500">
                   <Compass className="h-3.5 w-3.5" />
-                  The itinerary
+                  યાત્રાપથ
                 </p>
                 <h2 className="section-title mt-4">
-                  Every stop,{' '}
-                  <span className="italic text-ocean-500">saved.</span>
+                  દરેક સ્થળ,{' '}
+                  <span className="text-ocean-500">એક જ જગ્યાએ.</span>
                 </h2>
                 <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ocean-900/60">
-                  Twenty moments across seven days — filter by day or mood, search
-                  for a favourite, then tap any photo to open the full-size view.
+                  સાત દિવસમાં વીસ ક્ષણો — દિવસ કે મૂડ પ્રમાણે ફિલ્ટર કરો, પ્રિય
+                  સ્થળ શોધો, પછી કોઈ પણ ફોટા પર ટેપ કરીને મોટા આકારમાં જુઓ.
                 </p>
               </div>
 
@@ -126,10 +127,10 @@ export default function App() {
                   </span>
                   <div>
                     <p className="font-display text-xl leading-none text-ocean-950">
-                      {places.length}
+                      {toGujaratiNumber(places.length)}
                     </p>
-                    <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.18em] text-ocean-900/40">
-                      Spots
+                    <p className="mt-1 text-[10px] font-bold text-ocean-900/40">
+                      સ્થળો
                     </p>
                   </div>
                 </div>
@@ -139,10 +140,10 @@ export default function App() {
                   </span>
                   <div>
                     <p className="font-display text-xl leading-none text-ocean-950">
-                      7
+                      ૭
                     </p>
-                    <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.18em] text-ocean-900/40">
-                      Days mapped
+                    <p className="mt-1 text-[10px] font-bold text-ocean-900/40">
+                      દિવસો
                     </p>
                   </div>
                 </div>
@@ -166,11 +167,11 @@ export default function App() {
               {filteredPlaces.length > 0 ? (
                 <>
                   <div className="mb-5 flex items-center justify-between gap-3">
-                    <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-ocean-900/35">
-                      {String(filteredPlaces.length).padStart(2, '0')} places in view
+                    <p className="text-[10px] font-bold text-ocean-900/35">
+                      {toGujaratiPadded(filteredPlaces.length)} સ્થળો દેખાય છે
                     </p>
-                    <p className="hidden text-[10px] font-semibold text-ocean-900/35 sm:block">
-                      Tap a card for the full photo · {tripInfo.dateRange}
+                    <p className="hidden text-[11px] font-semibold text-ocean-900/35 sm:block">
+                      કાર્ડ પર ટેપ કરો · {tripInfo.dateRange}
                     </p>
                   </div>
 
@@ -190,15 +191,15 @@ export default function App() {
                   <span className="grid h-16 w-16 place-items-center rounded-full bg-ocean-50 text-ocean-400">
                     <SearchX className="h-7 w-7" strokeWidth={1.6} />
                   </span>
-                  <h3 className="mt-5 font-display text-2xl font-light text-ocean-950">
-                    No spots match that search
+                  <h3 className="mt-5 font-display text-2xl font-normal text-ocean-950">
+                    એ શોધ સાથે કોઈ સ્થળ મળ્યું નહીં
                   </h3>
                   <p className="mt-2 max-w-sm text-sm leading-relaxed text-ocean-900/50">
-                    Try another name, or clear the filters to see all twenty stops
-                    across the island.
+                    બીજું નામ પ્રયત્ન કરો, અથવા ફિલ્ટર સાફ કરીને બધાં વીસ સ્થળો
+                    જુઓ.
                   </p>
                   <button type="button" onClick={resetFilters} className="btn-dark mt-6">
-                    Clear all filters
+                    બધા ફિલ્ટર સાફ કરો
                   </button>
                 </div>
               )}
