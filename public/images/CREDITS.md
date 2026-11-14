@@ -5,7 +5,7 @@ first run. All of them are free-to-use, but a few require attribution — those 
 listed below. You are welcome to replace any of them with your own pictures
 (see [README.md](./README.md) for the two supported workflows).
 
-`1.png` – `5.png` in `src/data/` are **personal trip photos** and are not covered
+`1.png` – `20.png` in `src/data/` are **personal trip photos** and are not covered
 by these credits.
 
 ---
@@ -58,7 +58,7 @@ photographers explicitly.
 
 ## Your own photos
 
-`src/data/1.png` – `5.png` are personal images supplied for this trip and are
+`src/data/1.png` – `20.png` are personal images supplied for this trip and are
 used for Legian Beach Sunset, Double Six Beach, Banana Boat Ride, Parasailing and
 Jet Ski. They are not part of the credits above.
 

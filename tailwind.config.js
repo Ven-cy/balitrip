@@ -3,6 +3,9 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
+      screens: {
+        xs: '360px',
+      },
       colors: {
         sand: {
           50: '#FCF8F1',
@@ -38,8 +41,6 @@ export default {
           500: '#D8624A',
           600: '#BC4B37',
           700: '#97392B',
-          800: '#722C22',
-          900: '#4E201A',
         },
         gold: {
           100: '#F6E9CB',
@@ -50,57 +51,15 @@ export default {
         },
       },
       fontFamily: {
-        display: [
-          '"Noto Serif Gujarati"',
-          'Fraunces',
-          'Georgia',
-          'serif',
-        ],
-        sans: [
-          '"Mukta Vaani"',
-          'Manrope',
-          'ui-sans-serif',
-          'system-ui',
-          'sans-serif',
-        ],
+        display: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        soft: '0 18px 45px -25px rgba(7, 33, 36, 0.35)',
-        lift: '0 30px 60px -25px rgba(7, 33, 36, 0.45)',
-        glow: '0 0 0 1px rgba(252, 248, 241, 0.12), 0 25px 60px -20px rgba(7, 33, 36, 0.65)',
+        soft: '0 16px 40px -28px rgba(7, 33, 36, 0.45)',
+        lift: '0 28px 60px -30px rgba(7, 33, 36, 0.5)',
       },
       borderRadius: {
         '4xl': '2rem',
-        '5xl': '2.75rem',
-      },
-      animation: {
-        'fade-up': 'fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both',
-        'fade-in': 'fadeIn 0.35s ease-out both',
-        'modal-in': 'modalIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both',
-        'slow-pan': 'slowPan 24s ease-in-out infinite alternate',
-        'float-slow': 'floatSlow 7s ease-in-out infinite',
-      },
-      keyframes: {
-        fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(24px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        modalIn: {
-          '0%': { opacity: '0', transform: 'translateY(24px) scale(0.98)' },
-          '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
-        },
-        slowPan: {
-          '0%': { transform: 'scale(1.05) translate3d(0, 0, 0)' },
-          '100%': { transform: 'scale(1.14) translate3d(-1.5%, -1%, 0)' },
-        },
-        floatSlow: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
       },
     },
   },

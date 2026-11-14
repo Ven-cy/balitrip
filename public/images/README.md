@@ -7,10 +7,10 @@ pictures.**
 ## Swapping a photo
 
 1. Add your image here, e.g. `public/images/my-beach.jpg`.
-2. Point the matching `imageUrl` in `src/data/baliData.js` at it:
+2. Point the matching `image` field in `src/data/tourData.js` at it:
 
    ```js
-   imageUrl: '/images/my-beach.jpg',
+   image: '/images/my-beach.jpg',
    ```
 
 Use a **root-relative path** (`/images/...`), not `public/images/...` and not a
@@ -23,22 +23,22 @@ lowercase-with-dashes names.
 ## Or import the photo
 
 Photos can also live next to the data file and be imported. This is how the
-personal trip photos `1.png` – `5.png` in `src/data/` are wired up:
+personal trip photos `1.png` – `20.png` in `src/data/` are wired up:
 
 ```js
 import myPhoto from './my-photo.jpg'
 
 // ...
-imageUrl: myPhoto,
+image: myPhoto,
 ```
 
 Vite fingerprints imported assets at build time, so they deploy reliably.
 
 ## Current contents
 
-`bali-hero.jpg` and the two hotel photos, plus the landmark and activity photos
-referenced from `baliData.js`. Attribution and licenses are in
+`bali-hero.jpg` and the hotel photos, plus the landmark and activity photos
+referenced from `tourData.js`. Attribution and licenses are in
 [CREDITS.md](./CREDITS.md).
 
-If a path is wrong or an image goes missing, the app shows a branded SVG
-fallback instead of a broken image — check the path and filename first.
+If a path is wrong or an image goes missing, the app shows a branded
+placeholder tile instead of a broken image — check the path and filename first.
