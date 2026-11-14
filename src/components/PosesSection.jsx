@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Camera, MapPin, Maximize2, PersonStanding, Shirt, Sparkles } from 'lucide-react'
+import { Camera, Maximize2, PersonStanding, Sparkles } from 'lucide-react'
 
 /** "Women's Photo Poses & Style Guide" — gallery-style pose reference grid. */
 export default function PosesSection({ poses, onOpenPhoto }) {
@@ -14,24 +14,11 @@ export default function PosesSection({ poses, onOpenPhoto }) {
           Women&rsquo;s Photo Poses
           <span className="block text-ocean-600">&amp; Style Guide</span>
         </h2>
-        <p className="mt-2 text-base leading-relaxed text-ocean-900/65">
-          Six poses matched to our exact stops — a quick gallery-style board to
-          save and show your photographer.
-        </p>
-
         <ul className="mt-4 grid grid-cols-1 gap-2.5 xs:grid-cols-2">
           {poses.map((pose) => (
             <PoseCard key={pose.id} pose={pose} onOpenPhoto={onOpenPhoto} />
           ))}
         </ul>
-
-        <p className="mt-3 rounded-xl bg-sand-100/70 px-3 py-2.5 text-[12px] leading-relaxed text-ocean-900/55">
-          These are pose-only cards. Add your own reference photo for any pose
-          (<span className="font-semibold text-ocean-800/70">public/images/pose-01.jpg</span>{' '}
-          … <span className="font-semibold text-ocean-800/70">pose-06.jpg</span>) and
-          it appears here, then opens in the same full-screen gallery as the trip
-          photos.
-        </p>
       </div>
     </section>
   )
@@ -39,48 +26,8 @@ export default function PosesSection({ poses, onOpenPhoto }) {
 
 function PoseCard({ pose, onOpenPhoto }) {
   return (
-    <li className="flex flex-col overflow-hidden rounded-2xl border border-ocean-950/[0.07] bg-sand-50/60">
+    <li className="overflow-hidden rounded-2xl border border-ocean-950/[0.07] bg-sand-50/60">
       <PoseMedia pose={pose} onOpenPhoto={onOpenPhoto} />
-
-      <div className="flex flex-1 flex-col p-2.5">
-        <h3 className="font-display text-[1.05rem] leading-[1.2] text-ocean-950">
-          {pose.title}
-        </h3>
-
-        <p className="mt-1 flex items-start gap-1 text-[11px] font-semibold leading-snug text-ocean-600/85">
-          <MapPin className="mt-px h-3 w-3 shrink-0" strokeWidth={2.2} aria-hidden="true" />
-          <span>{pose.spot}</span>
-        </p>
-
-        <div className="mt-2">
-          <p className="text-[9px] font-extrabold uppercase tracking-[0.1em] text-ocean-500">
-            How to pose
-          </p>
-          <ul className="mt-1 space-y-1">
-            {pose.poseTips.map((tip) => (
-              <li
-                key={tip}
-                className="flex gap-1.5 text-[12px] leading-[1.45] text-ocean-900/75"
-              >
-                <span className="mt-[5px] h-1 w-1 shrink-0 rounded-full bg-gold-400" />
-                <span>{tip}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="mt-2 flex gap-1.5 rounded-lg bg-gold-100/60 p-2 ring-1 ring-gold-200/70">
-          <Shirt
-            className="mt-0.5 h-3 w-3 shrink-0 text-gold-500"
-            strokeWidth={2.2}
-            aria-hidden="true"
-          />
-          <p className="text-[12px] leading-[1.45] text-ocean-900/75">
-            <span className="font-bold text-ocean-900">Outfit: </span>
-            {pose.outfit}
-          </p>
-        </div>
-      </div>
     </li>
   )
 }
