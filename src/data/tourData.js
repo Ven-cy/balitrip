@@ -38,8 +38,13 @@ import parasailingPhoto from './4.png'
 import jetSkiPhoto from './5.png'
 import legianNightPhoto from './1.png'
 import padangPadangPhoto from './11.png'
+import Wanagiri from './21.png'
+import Paluang from './22.png'
+import TirtaEmpulTemple from './23.png'
+import SaraswatiTemple from './24.png'
 import fairfieldPhoto from './hotel1.png'
 import danakhaPhoto from './hotel2.png'
+import semabuPhoto from './hotel3.png'
 
 /* -------------------------------------------------------------------------- */
 /*  TRIP OVERVIEW                                                             */
@@ -77,7 +82,7 @@ export const hotels = [
     name: 'Semabu Hills',
     room: 'Grand Deluxe Room · Garden View',
     // Add your own photo: image: '/images/semabu-hills.jpg'
-    image: null,
+    image: semabuPhoto,
   },
   {
     id: 'danakha',
@@ -293,6 +298,7 @@ export const days = [
       {
         name: 'Wanagiri Hidden Hills & Banyumala Twin Waterfalls',
         distance: '5–10 mins from Handara Gate',
+        image: Wanagiri,
         blurb:
           'Panoramic twin-lake photo swings and a pair of serene jungle waterfalls if the day is running ahead.',
       },
@@ -357,6 +363,7 @@ export const days = [
       {
         name: 'Paluang Cliff',
         distance: '3 mins from Kelingking Bay',
+        image: Paluang,
         blurb:
           'The best side-angle viewpoint of the T-Rex cliff — same view, far fewer crowds.',
       },
@@ -449,6 +456,7 @@ export const days = [
       {
         name: 'Cretya Ubud (Alas Harum) & Tirta Empul Temple',
         distance: 'Right next to Tegalalang',
+        image: TirtaEmpulTemple,
         blurb:
           'Jungle infinity pools overlooking the rice terraces, plus the sacred holy-water temple of Tirta Empul.',
       },
@@ -508,6 +516,7 @@ export const days = [
       {
         name: 'Campuhan Ridge Walk & Saraswati Temple',
         distance: 'In central Ubud',
+        image: SaraswatiTemple,
         blurb:
           'A scenic green hill walk at golden hour, followed by the lotus-pond water palace in the heart of town.',
       },
